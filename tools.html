@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Open-source and open-adjacent tools used in Rodney Rees / GeekTheGreyBeard's PatriciAI, lab, automation, AI, infrastructure, and hardware environment." />
+  <title>Open Tools in the Lab | GeekTheGreyBeard</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #171b23;
+      --panel-2: #202635;
+      --text: #ece7dc;
+      --muted: #b9b1a4;
+      --accent: #d6a75c;
+      --accent-2: #7fb7a6;
+      --line: rgba(236, 231, 220, 0.14);
+      --shadow: rgba(0, 0, 0, 0.35);
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(214, 167, 92, 0.16), transparent 34rem),
+        radial-gradient(circle at top right, rgba(127, 183, 166, 0.14), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .site-nav {
+      border-bottom: 1px solid var(--line);
+      background: rgba(15, 17, 21, 0.72);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .site-nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 0;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    header { padding: 4.5rem 0 2.5rem; }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h1, h2, h3 { line-height: 1.12; margin: 0 0 1rem; }
+    h1 { font-size: clamp(2.65rem, 7vw, 5.75rem); letter-spacing: -0.07em; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); letter-spacing: -0.04em; }
+    h3 { color: var(--accent-2); font-size: 1.15rem; }
+
+    .subtitle, .lead {
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      max-width: 78ch;
+    }
+
+    main { padding-bottom: 5rem; }
+    section { padding: 3rem 0; border-top: 1px solid var(--line); }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .tile {
+      background: rgba(23, 27, 35, 0.78);
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      padding: 1.25rem;
+      min-height: 100%;
+    }
+
+    .tile p { color: var(--muted); margin: 0 0 1rem; }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: auto;
+    }
+
+    .button-link {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.32rem 0.7rem;
+      color: var(--text);
+      background: rgba(255,255,255,0.035);
+      font-size: 0.9rem;
+    }
+
+    .button-link:hover {
+      border-color: rgba(214, 167, 92, 0.55);
+      text-decoration: none;
+    }
+
+    .note {
+      background: linear-gradient(145deg, rgba(32, 38, 53, 0.95), rgba(23, 27, 35, 0.95));
+      border: 1px solid var(--line);
+      border-radius: 1.2rem;
+      padding: 1.2rem;
+      color: var(--muted);
+      box-shadow: 0 1.5rem 4rem var(--shadow);
+    }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      color: var(--muted);
+      background: rgba(255,255,255,0.03);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 680px) {
+      header { padding-top: 3rem; }
+      .site-nav .wrap { align-items: flex-start; flex-direction: column; }
+      .nav-links { justify-content: flex-start; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="wrap">
+      <a class="brand" href="index.html">GeekTheGreyBeard</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html">Open tools</a>
+        <a href="https://github.com/GeekTheGreyBeard">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">PatriciAI · lab stack · open tools</div>
+      <h1>The tools behind the useful mischief.</h1>
+      <p class="subtitle">A high-level map of the open-source and open-adjacent software, platforms, and hardware ecosystems in use around my lab, automation, AI, and infrastructure work. This is intentionally not a deployment guide, network diagram, or secrets-adjacent inventory.</p>
+      <div class="pill-row" aria-label="Tool areas">
+        <span class="pill">local AI</span>
+        <span class="pill">automation</span>
+        <span class="pill">self-hosting</span>
+        <span class="pill">data platforms</span>
+        <span class="pill">wearables</span>
+        <span class="pill">lab operations</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="note">
+      <div class="note">
+        <strong>Scope note:</strong> this page names the kinds of tools used and links to their public projects or homepages. It avoids fine particulars of how they are deployed here: no private hostnames, credentials, keys, network details, model endpoints, or operational runbooks.
+      </div>
+    </section>
+
+    <section id="ai-agents">
+      <h2>AI, agents, speech, and memory</h2>
+      <p class="lead">PatriciAI is built around local-first AI where practical, with OpenAI-compatible interfaces, retrieval, speech, and assistant workflows stitched together under human oversight.</p>
+      <div class="grid">
+        <article class="tile">
+          <h3>OpenClaw</h3>
+          <p>Personal AI assistant runtime and automation layer used for agent sessions, tools, reminders, memory, and coordination.</p>
+          <div class="links"><a class="button-link" href="https://github.com/openclaw/openclaw">GitHub</a><a class="button-link" href="https://docs.openclaw.ai">Docs</a></div>
+        </article>
+        <article class="tile">
+          <h3>GPUStack</h3>
+          <p>GPU model serving and orchestration for local inference, embeddings, reranking, and OpenAI-compatible model access.</p>
+          <div class="links"><a class="button-link" href="https://github.com/gpustack/gpustack">GitHub</a><a class="button-link" href="https://gpustack.ai/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>LM Studio</h3>
+          <p>Local model exploration and compatibility testing tool; useful for quickly trying models and OpenAI-style workflows.</p>
+          <div class="links"><a class="button-link" href="https://lmstudio.ai/">Homepage</a><a class="button-link" href="https://github.com/lmstudio-ai">GitHub org</a></div>
+        </article>
+        <article class="tile">
+          <h3>Speaches</h3>
+          <p>OpenAI-compatible speech service used for local speech-to-text and speech API experiments.</p>
+          <div class="links"><a class="button-link" href="https://github.com/speaches-ai/speaches">GitHub</a><a class="button-link" href="https://speaches.ai/">Docs</a></div>
+        </article>
+        <article class="tile">
+          <h3>Chatterbox</h3>
+          <p>Open-source text-to-speech stack used for voice generation experiments and assistant voice work.</p>
+          <div class="links"><a class="button-link" href="https://github.com/resemble-ai/chatterbox">GitHub</a><a class="button-link" href="https://chatterboxtts.com/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Flowise</h3>
+          <p>Visual AI workflow builder for prototyping LLM chains, agents, integrations, and retrieval flows.</p>
+          <div class="links"><a class="button-link" href="https://github.com/FlowiseAI/Flowise">GitHub</a><a class="button-link" href="https://flowiseai.com/">Homepage</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="automation">
+      <h2>Automation and integration</h2>
+      <p class="lead">The environment favors tools that make repeatable work visible, auditable, and less dependent on memory or heroics.</p>
+      <div class="grid">
+        <article class="tile">
+          <h3>n8n</h3>
+          <p>Workflow automation platform used for service orchestration, integrations, and business/technical automation experiments.</p>
+          <div class="links"><a class="button-link" href="https://github.com/n8n-io/n8n">GitHub</a><a class="button-link" href="https://n8n.io/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Home Assistant</h3>
+          <p>Automation and IoT ecosystem for practical environment-aware workflows and device integrations.</p>
+          <div class="links"><a class="button-link" href="https://github.com/home-assistant/core">GitHub</a><a class="button-link" href="https://www.home-assistant.io/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>ffmpeg</h3>
+          <p>The quiet workhorse behind media conversion, audio/video handling, frame extraction, and automation glue.</p>
+          <div class="links"><a class="button-link" href="https://github.com/FFmpeg/FFmpeg">GitHub</a><a class="button-link" href="https://ffmpeg.org/">Homepage</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="infrastructure">
+      <h2>Infrastructure and operations</h2>
+      <p class="lead">The lab is a proving ground for resilient self-hosting: virtualization, containers, dashboards, reverse proxies, backup posture, and practical service ownership.</p>
+      <div class="grid">
+        <article class="tile">
+          <h3>Proxmox VE</h3>
+          <p>Open-source virtualization platform for running and managing VM and container infrastructure.</p>
+          <div class="links"><a class="button-link" href="https://github.com/proxmox/pve-manager">GitHub</a><a class="button-link" href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Proxmox Backup Server</h3>
+          <p>Backup platform used as part of the recoverability-first approach to lab and service operations.</p>
+          <div class="links"><a class="button-link" href="https://github.com/proxmox/proxmox-backup">GitHub</a><a class="button-link" href="https://www.proxmox.com/en/products/proxmox-backup-server/overview">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Docker</h3>
+          <p>Container runtime and packaging layer for many lab services and experiments.</p>
+          <div class="links"><a class="button-link" href="https://github.com/docker">GitHub org</a><a class="button-link" href="https://www.docker.com/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Nginx Proxy Manager</h3>
+          <p>Friendly reverse-proxy management for routing, certificates, and service exposure.</p>
+          <div class="links"><a class="button-link" href="https://github.com/NginxProxyManager/nginx-proxy-manager">GitHub</a><a class="button-link" href="https://nginxproxymanager.com/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Homepage</h3>
+          <p>Service dashboard used to keep important systems visible without turning status into a scavenger hunt.</p>
+          <div class="links"><a class="button-link" href="https://github.com/gethomepage/homepage">GitHub</a><a class="button-link" href="https://gethomepage.dev/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Vaultwarden</h3>
+          <p>Self-hosted Bitwarden-compatible password vault for keeping secrets out of notes, code, and chat.</p>
+          <div class="links"><a class="button-link" href="https://github.com/dani-garcia/vaultwarden">GitHub</a><a class="button-link" href="https://github.com/dani-garcia/vaultwarden/wiki">Docs</a></div>
+        </article>
+        <article class="tile">
+          <h3>Gitea</h3>
+          <p>Self-hosted Git service used where local repository hosting and lightweight project control make sense.</p>
+          <div class="links"><a class="button-link" href="https://github.com/go-gitea/gitea">GitHub</a><a class="button-link" href="https://about.gitea.com/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Uptime Kuma</h3>
+          <p>Open-source service monitoring and status checks for keeping an eye on what should be alive.</p>
+          <div class="links"><a class="button-link" href="https://github.com/louislam/uptime-kuma">GitHub</a><a class="button-link" href="https://uptime.kuma.pet/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Ubuntu / Debian Linux</h3>
+          <p>The operating-system foundation under much of the lab: boring in the best possible way.</p>
+          <div class="links"><a class="button-link" href="https://github.com/debian">Debian GitHub</a><a class="button-link" href="https://ubuntu.com/">Ubuntu</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="data">
+      <h2>Data, search, and documents</h2>
+      <p class="lead">Structured data, document workflows, and retrieval systems matter because agents are only useful when their context is accurate and inspectable.</p>
+      <div class="grid">
+        <article class="tile">
+          <h3>PostgreSQL</h3>
+          <p>Primary relational database platform for durable app data, structured records, and operational storage.</p>
+          <div class="links"><a class="button-link" href="https://github.com/postgres/postgres">GitHub</a><a class="button-link" href="https://www.postgresql.org/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>pgvector</h3>
+          <p>Vector extension for PostgreSQL used for embeddings, semantic retrieval, and memory/search experiments.</p>
+          <div class="links"><a class="button-link" href="https://github.com/pgvector/pgvector">GitHub</a></div>
+        </article>
+        <article class="tile">
+          <h3>Supabase</h3>
+          <p>Open-source backend platform built around PostgreSQL for API, auth, storage, and rapid app work.</p>
+          <div class="links"><a class="button-link" href="https://github.com/supabase/supabase">GitHub</a><a class="button-link" href="https://supabase.com/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>NocoDB</h3>
+          <p>Open-source no-code database UI for making structured data easier to view and manage.</p>
+          <div class="links"><a class="button-link" href="https://github.com/nocodb/nocodb">GitHub</a><a class="button-link" href="https://www.nocodb.com/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>MongoDB Community</h3>
+          <p>Document database used where document-shaped application data or compatibility calls for it.</p>
+          <div class="links"><a class="button-link" href="https://github.com/mongodb/mongo">GitHub</a><a class="button-link" href="https://www.mongodb.com/products/self-managed/community-edition">Community edition</a></div>
+        </article>
+        <article class="tile">
+          <h3>MariaDB</h3>
+          <p>Open-source relational database in the MySQL family, useful for application compatibility and traditional workloads.</p>
+          <div class="links"><a class="button-link" href="https://github.com/MariaDB/server">GitHub</a><a class="button-link" href="https://mariadb.org/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>MinIO</h3>
+          <p>S3-compatible object storage for self-hosted storage patterns and service integration experiments.</p>
+          <div class="links"><a class="button-link" href="https://github.com/minio/minio">GitHub</a><a class="button-link" href="https://min.io/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Paperless-ngx</h3>
+          <p>Document management and OCR pipeline for turning piles of paper into searchable operational knowledge.</p>
+          <div class="links"><a class="button-link" href="https://github.com/paperless-ngx/paperless-ngx">GitHub</a><a class="button-link" href="https://docs.paperless-ngx.com/">Docs</a></div>
+        </article>
+        <article class="tile">
+          <h3>Stirling PDF</h3>
+          <p>Self-hosted PDF toolbox for conversion, splitting, combining, OCR-adjacent workflows, and document cleanup.</p>
+          <div class="links"><a class="button-link" href="https://github.com/Stirling-Tools/Stirling-PDF">GitHub</a><a class="button-link" href="https://www.stirlingpdf.com/">Homepage</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="hardware">
+      <h2>Hardware and embodied tools</h2>
+      <p class="lead">The lab is not just servers. Wearables and purpose-built devices are part of the long-term assistant ecosystem: capture, context, voice, ambient memory, and human-centered interaction.</p>
+      <div class="grid">
+        <article class="tile">
+          <h3>Omi</h3>
+          <p>Open-source AI wearable ecosystem used for exploring always-available memory, capture, and assistant workflows across device types.</p>
+          <div class="links"><a class="button-link" href="https://github.com/BasedHardware/omi">GitHub</a><a class="button-link" href="https://www.omi.me/">Homepage</a><a class="button-link" href="https://docs.omi.me/">Docs</a></div>
+        </article>
+        <article class="tile">
+          <h3>rabbit r1</h3>
+          <p>Dedicated AI hardware in the exploration pile. The device is not treated here as fully open-source, but rabbit publishes open-source components and developer-facing material.</p>
+          <div class="links"><a class="button-link" href="https://www.rabbit.tech/r1">Homepage</a><a class="button-link" href="https://github.com/rabbit-hmi-oss">Open-source GitHub org</a></div>
+        </article>
+        <article class="tile">
+          <h3>Raspberry Pi</h3>
+          <p>Small, flexible utility hardware for lightweight services, edge experiments, device bridges, and lab glue.</p>
+          <div class="links"><a class="button-link" href="https://github.com/raspberrypi">GitHub org</a><a class="button-link" href="https://www.raspberrypi.com/">Homepage</a></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> Rodney Rees / GeekTheGreyBeard. Public tool references only; the interesting part is how judgment, privacy, and operations fit around them.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

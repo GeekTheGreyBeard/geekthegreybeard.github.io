@@ -50,6 +50,37 @@
       margin: 0 auto;
     }
 
+    .site-nav {
+      border-bottom: 1px solid var(--line);
+      background: rgba(15, 17, 21, 0.72);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .site-nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 0;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+    }
+
     header {
       padding: 5rem 0 3rem;
     }
@@ -211,10 +242,23 @@
     @media (max-width: 820px) {
       header { padding-top: 3rem; }
       .hero, .grid, .grid.two { grid-template-columns: 1fr; }
+      .site-nav .wrap { align-items: flex-start; flex-direction: column; }
+      .nav-links { justify-content: flex-start; }
     }
   </style>
 </head>
 <body>
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="wrap">
+      <a class="brand" href="index.html">GeekTheGreyBeard</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html">Open tools</a>
+        <a href="https://github.com/GeekTheGreyBeard">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
   <header>
     <div class="wrap hero">
       <div>
