@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Splat-I — Wildcard Logic. Precision Outcomes. Rodney Rees / GeekTheGreyBeard's future-facing adaptive intelligence and agentic systems concept." />
+  <title>Splat-I | GeekTheGreyBeard</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #171b23;
+      --panel-2: #202635;
+      --text: #ece7dc;
+      --muted: #b9b1a4;
+      --accent: #d6a75c;
+      --accent-2: #7fb7a6;
+      --line: rgba(236, 231, 220, 0.14);
+      --shadow: rgba(0, 0, 0, 0.35);
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(214, 167, 92, 0.18), transparent 34rem),
+        radial-gradient(circle at top right, rgba(127, 183, 166, 0.16), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+
+    .site-nav {
+      border-bottom: 1px solid var(--line);
+      background: rgba(15, 17, 21, 0.72);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .site-nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 0;
+    }
+
+    .brand { color: var(--text); font-weight: 800; letter-spacing: -0.03em; }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    header { padding: 4.5rem 0 2.5rem; }
+
+    .hero {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h1, h2, h3 { line-height: 1.12; margin: 0 0 1rem; }
+    h1 { font-size: clamp(2.65rem, 7vw, 5.75rem); letter-spacing: -0.07em; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); letter-spacing: -0.04em; }
+    h3 { color: var(--accent-2); font-size: 1.15rem; }
+
+    .subtitle, .lead { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); max-width: 78ch; }
+
+    main { padding-bottom: 5rem; }
+    section { padding: 3rem 0; border-top: 1px solid var(--line); }
+
+    .card, .tile {
+      background: rgba(23, 27, 35, 0.78);
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      padding: 1.25rem;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(32, 38, 53, 0.95), rgba(23, 27, 35, 0.95));
+      box-shadow: 0 1.5rem 4rem var(--shadow);
+    }
+
+    .card p, .tile p { color: var(--muted); margin: 0; }
+
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .quote {
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      line-height: 1.18;
+      color: var(--text);
+      border-left: 0.28rem solid var(--accent);
+      padding-left: 1.2rem;
+      margin: 1.5rem 0 0;
+      letter-spacing: -0.04em;
+    }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.75rem; color: var(--muted); background: rgba(255,255,255,0.03); font-size: 0.92rem; }
+
+    footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; }
+
+    @media (max-width: 900px) { .hero, .grid, .grid.two { grid-template-columns: 1fr; } }
+    @media (max-width: 680px) {
+      header { padding-top: 3rem; }
+      .site-nav .wrap { align-items: flex-start; flex-direction: column; }
+      .nav-links { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="wrap">
+      <a class="brand" href="index.html">GeekTheGreyBeard</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="patriciai.html">PatriciAI</a>
+        <a href="splat-i.html">Splat-I</a>
+        <a href="tools.html">Open tools</a>
+        <a href="https://github.com/GeekTheGreyBeard">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">Splat-I · adaptive intelligence · future-facing systems</div>
+        <h1>Wildcard logic for precision outcomes.</h1>
+        <p class="subtitle">Splat-I is the future-facing company and platform concept: bespoke adaptive intelligence, agentic systems, and automation services for people and organizations that need technology to move with judgment.</p>
+        <p class="quote">Wildcard Logic. Precision Outcomes.</p>
+      </div>
+      <aside class="card" aria-label="Splat-I summary">
+        <h3>Positioning</h3>
+        <p>Splat-I is imagined as a luxury-grade intelligence platform and service model: not commodity automation, but crafted systems that blend AI, operations, privacy, workflow, and human context.</p>
+      </aside>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="vision">
+      <h2>The vision</h2>
+      <p class="lead">Splat-I is about building intelligence systems that adapt to the user, the mission, and the environment. The goal is not another dashboard or chatbot. The goal is an intelligence layer that can reason across tools, workflows, memory, media, and real operational constraints.</p>
+      <p class="lead">If PatriciAI is the working lab, Splat-I is the larger expression: applied, bespoke, high-touch intelligence services built from the lessons learned in the lab.</p>
+    </section>
+
+    <section id="principles">
+      <h2>Core principles</h2>
+      <div class="grid two">
+        <article class="tile">
+          <h3>Precision before scale</h3>
+          <p>The best system is not the one that automates the most. It is the one that does the right work, at the right time, with the right boundaries.</p>
+        </article>
+        <article class="tile">
+          <h3>Luxury means fit</h3>
+          <p>Luxury intelligence is not about decoration. It is about systems that feel made for the person or organization using them.</p>
+        </article>
+        <article class="tile">
+          <h3>Human judgment stays central</h3>
+          <p>Agentic systems need permissioning, explainability, recoverability, and oversight — especially when they touch business, healthcare, or personal operations.</p>
+        </article>
+        <article class="tile">
+          <h3>Private where it matters</h3>
+          <p>Useful intelligence often depends on sensitive context. Splat-I's direction favors local-first, controlled, and carefully scoped designs where possible.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Service and platform areas</h2>
+      <div class="grid">
+        <article class="tile">
+          <h3>RAG and knowledge systems</h3>
+          <p>Retrieval-augmented systems that turn documents, notes, procedures, and institutional knowledge into usable context.</p>
+        </article>
+        <article class="tile">
+          <h3>Model and workflow tuning</h3>
+          <p>Model selection, fine-tuning where appropriate, prompt/workflow design, evaluation, and practical performance tuning.</p>
+        </article>
+        <article class="tile">
+          <h3>Agents and agencies</h3>
+          <p>Coordinated agents with roles, memory, tool access, and boundaries — designed to assist operations rather than spray actions everywhere.</p>
+        </article>
+        <article class="tile">
+          <h3>Assistant personas</h3>
+          <p>Human-centered assistant identities that match a person's work style, communication preferences, and operational needs.</p>
+        </article>
+        <article class="tile">
+          <h3>Workflow automation</h3>
+          <p>Business and technical automation that removes friction, reduces repeated work, and makes processes more observable.</p>
+        </article>
+        <article class="tile">
+          <h3>Wearables and ambient context</h3>
+          <p>Exploration of devices, voice, capture, and contextual interfaces that let assistance meet the user where the work actually happens.</p>
+        </article>
+        <article class="tile">
+          <h3>Enterprise intelligence layers</h3>
+          <p>Organization-wide assistants and knowledge layers that help teams understand, coordinate, and act without losing accountability.</p>
+        </article>
+        <article class="tile">
+          <h3>Robot and device integration</h3>
+          <p>Practical bridges between AI systems, devices, sensors, robots, and real-world workflows.</p>
+        </article>
+        <article class="tile">
+          <h3>Whole-life assistants</h3>
+          <p>Long-range personal/professional assistant concepts that can support planning, memory, communication, documentation, and execution.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="who-for">
+      <h2>Who it is for</h2>
+      <p class="lead">Splat-I is aimed at people and organizations whose work is too nuanced for generic automation: founders, executives, operators, healthcare teams, consultants, technical leaders, creators, and anyone whose context is the product.</p>
+      <div class="pill-row" aria-label="Splat-I audience">
+        <span class="pill">founders</span>
+        <span class="pill">healthcare operations</span>
+        <span class="pill">technical leaders</span>
+        <span class="pill">mission-driven teams</span>
+        <span class="pill">high-context professionals</span>
+        <span class="pill">adaptive organizations</span>
+      </div>
+    </section>
+
+    <section id="status">
+      <h2>Status</h2>
+      <p class="lead">Splat-I is currently a strategic vision and evolving platform concept. The practical groundwork is being built through PatriciAI: local AI services, memory, voice, retrieval, automation, documentation, infrastructure, and guardrail patterns.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> Rodney Rees / GeekTheGreyBeard. Splat-I: Wildcard Logic. Precision Outcomes.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
