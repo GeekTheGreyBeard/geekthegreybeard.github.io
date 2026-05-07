@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AdminX — an emerging automation infrastructure concept in Rodney Rees / GeekTheGreyBeard's broader PatriciAI and Splat-I ecosystem." />
+  <title>AdminX | GeekTheGreyBeard</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #171b23;
+      --panel-2: #202635;
+      --text: #ece7dc;
+      --muted: #b9b1a4;
+      --accent: #d6a75c;
+      --accent-2: #7fb7a6;
+      --line: rgba(236, 231, 220, 0.14);
+      --shadow: rgba(0, 0, 0, 0.35);
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(214, 167, 92, 0.18), transparent 34rem),
+        radial-gradient(circle at top right, rgba(127, 183, 166, 0.16), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+
+    .site-nav {
+      border-bottom: 1px solid var(--line);
+      background: rgba(15, 17, 21, 0.72);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .site-nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 0;
+    }
+
+    .brand { color: var(--text); font-weight: 800; letter-spacing: -0.03em; }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    header { padding: 4.5rem 0 2.5rem; }
+
+    .hero {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 1fr);
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h1, h2, h3 { line-height: 1.12; margin: 0 0 1rem; }
+    h1 { font-size: clamp(2.65rem, 7vw, 5.75rem); letter-spacing: -0.07em; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); letter-spacing: -0.04em; }
+    h3 { color: var(--accent-2); font-size: 1.15rem; }
+
+    .subtitle, .lead { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); max-width: 78ch; }
+
+    main { padding-bottom: 5rem; }
+    section { padding: 3rem 0; border-top: 1px solid var(--line); }
+
+    .card, .tile {
+      background: rgba(23, 27, 35, 0.78);
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      padding: 1.25rem;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(32, 38, 53, 0.95), rgba(23, 27, 35, 0.95));
+      box-shadow: 0 1.5rem 4rem var(--shadow);
+    }
+
+    .card p, .tile p { color: var(--muted); margin: 0; }
+
+    .hero-img {
+      display: block;
+      width: 100%;
+      border-radius: 1.1rem;
+      border: 1px solid var(--line);
+      box-shadow: 0 1.5rem 4rem var(--shadow);
+    }
+
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .quote {
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      line-height: 1.3;
+      color: var(--text);
+      border-left: 0.28rem solid var(--accent);
+      padding-left: 1.2rem;
+      margin: 1.5rem 0 0;
+    }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.75rem; color: var(--muted); background: rgba(255,255,255,0.03); font-size: 0.92rem; }
+
+    footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; }
+
+    @media (max-width: 900px) { .hero, .grid, .grid.two { grid-template-columns: 1fr; } }
+    @media (max-width: 680px) {
+      header { padding-top: 3rem; }
+      .site-nav .wrap { align-items: flex-start; flex-direction: column; }
+      .nav-links { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="wrap">
+      <a class="brand" href="index.html">GeekTheGreyBeard</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="patriciai.html">PatriciAI</a>
+        <a href="splat-i.html">Splat-I</a>
+        <a href="adminx.html">AdminX</a>
+        <a href="tools.html">Open tools</a>
+        <a href="https://github.com/GeekTheGreyBeard">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">AdminX · automation infrastructure · emerging product</div>
+        <h1>Automation infrastructure at scale.</h1>
+        <p class="subtitle">AdminX is an emerging product concept in the broader PatriciAI and Splat-I ecosystem. The details are still forming, but the direction is clear: administrative automation that can coordinate infrastructure, workflows, records, and operational intent without losing accountability.</p>
+        <p class="quote">Less swivel-chair administration. More observable, repeatable, governed work.</p>
+      </div>
+      <img class="hero-img" src="assets/images/adminX.webp" alt="AdminX automation infrastructure graphic with glowing gears, servers, cables, and robotic hands in a data center" />
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="positioning">
+      <h2>Positioning</h2>
+      <p class="lead">AdminX is being introduced here intentionally before the fine product particulars are public. Treat this as a marker: a named direction for automation infrastructure, not a complete specification.</p>
+      <div class="grid two">
+        <article class="tile">
+          <h3>Administrative automation</h3>
+          <p>Systems that reduce repetitive administrative work while keeping status, auditability, and human oversight visible.</p>
+        </article>
+        <article class="tile">
+          <h3>Infrastructure-aware workflows</h3>
+          <p>Automation that understands the operational environment instead of pretending every task is just a button click.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="possible-directions">
+      <h2>Possible directions</h2>
+      <div class="grid">
+        <article class="tile">
+          <h3>Workflow command center</h3>
+          <p>A place to define, observe, and coordinate routine administrative and technical workflows.</p>
+        </article>
+        <article class="tile">
+          <h3>Policy-aware execution</h3>
+          <p>Automation that knows which actions require approval, documentation, escalation, or rollback planning.</p>
+        </article>
+        <article class="tile">
+          <h3>Operational memory</h3>
+          <p>Context from systems, notes, tasks, records, and past decisions made available at the moment work is being done.</p>
+        </article>
+        <article class="tile">
+          <h3>Service coordination</h3>
+          <p>Bridges between dashboards, ticket-like work, documents, databases, scripts, notifications, and agents.</p>
+        </article>
+        <article class="tile">
+          <h3>Human-in-the-loop controls</h3>
+          <p>Clear approval paths, status reporting, and recoverable actions rather than blind automation.</p>
+        </article>
+        <article class="tile">
+          <h3>Reusable patterns</h3>
+          <p>Codified workflows that can be adapted across clients, labs, teams, and mission-driven organizations.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="relationship">
+      <h2>Relationship to PatriciAI and Splat-I</h2>
+      <p class="lead">PatriciAI is the working assistant and agentic lab. Splat-I is the wider adaptive-intelligence vision. AdminX sits between them as a product-shaped expression of automation infrastructure: practical enough for operations, flexible enough for future intelligence layers.</p>
+      <div class="pill-row" aria-label="AdminX themes">
+        <span class="pill">automation infrastructure</span>
+        <span class="pill">administrative workflows</span>
+        <span class="pill">approval-aware actions</span>
+        <span class="pill">operational context</span>
+        <span class="pill">repeatable patterns</span>
+        <span class="pill">human oversight</span>
+      </div>
+    </section>
+
+    <section id="status">
+      <h2>Status</h2>
+      <p class="lead">Early concept page. More detail will land here as AdminX is defined publicly: audience, capabilities, examples, architecture, and product boundaries.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> Rodney Rees / GeekTheGreyBeard. AdminX: automation infrastructure at scale.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
