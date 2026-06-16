@@ -207,55 +207,90 @@
   <main class="wrap">
     <section id="note">
       <div class="note">
-        <strong>Scope note:</strong> this page names the kinds of tools used and links to their public projects or homepages. It avoids fine particulars of how they are deployed here: no private hostnames, credentials, keys, network details, model endpoints, or operational runbooks.
+        <strong>Scope note:</strong> this is the public map of the tools and service families behind the work. It names public projects and platforms, but it does not publish private hostnames, credentials, network routes, model endpoints, runbooks, or client-specific details.
       </div>
     </section>
 
     <section id="ai-agents">
       <h2>AI, agents, speech, and memory</h2>
-      <p class="lead">PatriciAI is built around local-first AI where practical, with OpenAI-compatible interfaces, retrieval, speech, and assistant workflows stitched together under human oversight.</p>
+      <p class="lead">PatriciAI is built around governed agents, reusable skills, local-first model services where practical, and public APIs where they are the right tool for the job.</p>
       <div class="grid">
         <article class="tile">
           <h3>OpenClaw</h3>
-          <p>Personal AI assistant runtime and automation layer used for agent sessions, tools, reminders, memory, and coordination.</p>
+          <p>The personal agent runtime for sessions, skills, tools, memory, scheduling, Discord presence, browser work, media handling, and coordinated assistant operations.</p>
           <div class="links"><a class="button-link" href="https://github.com/openclaw/openclaw">GitHub</a><a class="button-link" href="https://docs.openclaw.ai">Docs</a></div>
         </article>
         <article class="tile">
+          <h3>Codex</h3>
+          <p>Coding-agent workbench used for repository edits, code review, shell-backed investigation, verification, and scoped implementation work.</p>
+          <div class="links"><a class="button-link" href="https://openai.com/codex/">OpenAI</a></div>
+        </article>
+        <article class="tile">
+          <h3>OpenAI APIs</h3>
+          <p>Public model, tool, and assistant APIs used where hosted intelligence, compatibility, or production-grade capability makes sense.</p>
+          <div class="links"><a class="button-link" href="https://platform.openai.com/docs">Docs</a></div>
+        </article>
+        <article class="tile">
           <h3>GPUStack</h3>
-          <p>GPU model serving and orchestration for local inference, embeddings, reranking, and OpenAI-compatible model access.</p>
+          <p>The current default local model-service layer for inference, embeddings, reranking, speech-to-text, text-to-speech, and OpenAI-compatible access.</p>
           <div class="links"><a class="button-link" href="https://github.com/gpustack/gpustack">GitHub</a><a class="button-link" href="https://gpustack.ai/">Homepage</a></div>
         </article>
         <article class="tile">
+          <h3>Whisper-compatible STT</h3>
+          <p>Speech-to-text workflows for voice capture, transcription, wearable memory, and assistant input pipelines, routed through controlled service boundaries.</p>
+          <div class="links"><a class="button-link" href="https://github.com/openai/whisper">Whisper</a></div>
+        </article>
+        <article class="tile">
+          <h3>Qwen TTS</h3>
+          <p>Local text-to-speech and voice-routing work for practical assistant voice output, experiments, and controlled speech generation.</p>
+          <div class="links"><a class="button-link" href="https://github.com/QwenLM/Qwen3">Qwen</a></div>
+        </article>
+        <article class="tile">
           <h3>LM Studio</h3>
-          <p>Local model exploration and compatibility testing tool; useful for quickly trying models and OpenAI-style workflows.</p>
+          <p>Local model exploration and compatibility testing for quickly trying models and OpenAI-style workflows.</p>
           <div class="links"><a class="button-link" href="https://lmstudio.ai/">Homepage</a><a class="button-link" href="https://github.com/lmstudio-ai">GitHub org</a></div>
         </article>
         <article class="tile">
-          <h3>Speaches</h3>
-          <p>OpenAI-compatible speech service used for local speech-to-text and speech API experiments.</p>
-          <div class="links"><a class="button-link" href="https://github.com/speaches-ai/speaches">GitHub</a><a class="button-link" href="https://speaches.ai/">Docs</a></div>
+          <h3>MCP</h3>
+          <p>Model Context Protocol servers and adapters for exposing tools, documentation, infrastructure, and purpose-built services to agents cleanly.</p>
+          <div class="links"><a class="button-link" href="https://modelcontextprotocol.io/">Homepage</a><a class="button-link" href="https://github.com/modelcontextprotocol">GitHub org</a></div>
         </article>
         <article class="tile">
-          <h3>Chatterbox</h3>
-          <p>Open-source text-to-speech stack used for voice generation experiments and assistant voice work.</p>
-          <div class="links"><a class="button-link" href="https://github.com/resemble-ai/chatterbox">GitHub</a><a class="button-link" href="https://chatterboxtts.com/">Homepage</a></div>
-        </article>
-        <article class="tile">
-          <h3>Flowise</h3>
-          <p>Visual AI workflow builder for prototyping LLM chains, agents, integrations, and retrieval flows.</p>
-          <div class="links"><a class="button-link" href="https://github.com/FlowiseAI/Flowise">GitHub</a><a class="button-link" href="https://flowiseai.com/">Homepage</a></div>
+          <h3>Obsidian</h3>
+          <p>Documentation and knowledge-base workspace for project records, memory, decisions, procedures, and publishable thinking.</p>
+          <div class="links"><a class="button-link" href="https://obsidian.md/">Homepage</a></div>
         </article>
       </div>
     </section>
 
     <section id="automation">
-      <h2>Automation and integration</h2>
-      <p class="lead">The environment favors tools that make repeatable work visible, auditable, and less dependent on memory or heroics.</p>
+      <h2>Automation, orchestration, and collaboration</h2>
+      <p class="lead">The stack favors API boundaries, reusable workflows, least-privilege credentials, and status trails that make agent work inspectable instead of mysterious.</p>
       <div class="grid">
         <article class="tile">
           <h3>n8n</h3>
-          <p>Workflow automation platform used for service orchestration, integrations, and business/technical automation experiments.</p>
+          <p>Workflow automation and deterministic orchestration layer for integrations, credential isolation, webhook patterns, and repeatable business/technical flows.</p>
           <div class="links"><a class="button-link" href="https://github.com/n8n-io/n8n">GitHub</a><a class="button-link" href="https://n8n.io/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>AdminX</h3>
+          <p>Operational execution layer for tasks, handoffs, evidence, workflow discipline, and recurring work that needs accountability.</p>
+          <div class="links"><a class="button-link" href="adminx.html">Profile page</a></div>
+        </article>
+        <article class="tile">
+          <h3>Vikunja</h3>
+          <p>Task and operations management target for structured intake, reconciliation, and agent-assisted project follow-through.</p>
+          <div class="links"><a class="button-link" href="https://vikunja.io/">Homepage</a><a class="button-link" href="https://code.vikunja.io/vikunja/vikunja">Source</a></div>
+        </article>
+        <article class="tile">
+          <h3>GitHub</h3>
+          <p>Public and private repository hosting, issue tracking, pull requests, automation, and profile publishing.</p>
+          <div class="links"><a class="button-link" href="https://github.com/GeekTheGreyBeard">Profile</a><a class="button-link" href="https://github.com/features/actions">Actions</a></div>
+        </article>
+        <article class="tile">
+          <h3>Discord</h3>
+          <p>Primary conversational surface for PatriciAI social presence, status updates, coordination, and lightweight approval flows.</p>
+          <div class="links"><a class="button-link" href="https://discord.com/developers/docs/intro">Developer docs</a></div>
         </article>
         <article class="tile">
           <h3>Home Assistant</h3>
@@ -263,35 +298,45 @@
           <div class="links"><a class="button-link" href="https://github.com/home-assistant/core">GitHub</a><a class="button-link" href="https://www.home-assistant.io/">Homepage</a></div>
         </article>
         <article class="tile">
-          <h3>ffmpeg</h3>
-          <p>The quiet workhorse behind media conversion, audio/video handling, frame extraction, and automation glue.</p>
+          <h3>Spotify APIs</h3>
+          <p>Music-control and listening-context integrations used for personal automation, analysis, and assistant interaction experiments.</p>
+          <div class="links"><a class="button-link" href="https://developer.spotify.com/documentation/web-api">Docs</a></div>
+        </article>
+        <article class="tile">
+          <h3>ffmpeg and ffmpeg API</h3>
+          <p>Media conversion, frame extraction, audio/video handling, and API-wrapped media services for agent-safe workflows.</p>
           <div class="links"><a class="button-link" href="https://github.com/FFmpeg/FFmpeg">GitHub</a><a class="button-link" href="https://ffmpeg.org/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Browser automation</h3>
+          <p>Headless browser, screenshot, and page-inspection workflows for validation, previews, documentation, and web task support.</p>
+          <div class="links"><a class="button-link" href="https://pptr.dev/">Puppeteer</a><a class="button-link" href="https://playwright.dev/">Playwright</a></div>
         </article>
       </div>
     </section>
 
     <section id="infrastructure">
       <h2>Infrastructure and operations</h2>
-      <p class="lead">The lab is a proving ground for resilient self-hosting: virtualization, containers, dashboards, reverse proxies, backup posture, and practical service ownership.</p>
+      <p class="lead">The lab is a proving ground for resilient self-hosting: virtualization, service routing, backups, monitoring, dashboards, secrets, and recoverable operations.</p>
       <div class="grid">
         <article class="tile">
           <h3>Proxmox VE</h3>
-          <p>Open-source virtualization platform for running and managing VM and container infrastructure.</p>
+          <p>Virtualization platform for VM-first service hosting, lab infrastructure, staging, and production-style operations.</p>
           <div class="links"><a class="button-link" href="https://github.com/proxmox/pve-manager">GitHub</a><a class="button-link" href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview">Homepage</a></div>
         </article>
         <article class="tile">
           <h3>Proxmox Backup Server</h3>
-          <p>Backup platform used as part of the recoverability-first approach to lab and service operations.</p>
+          <p>Backup and restore platform used as part of the recoverability-first approach to lab and service operations.</p>
           <div class="links"><a class="button-link" href="https://github.com/proxmox/proxmox-backup">GitHub</a><a class="button-link" href="https://www.proxmox.com/en/products/proxmox-backup-server/overview">Homepage</a></div>
         </article>
         <article class="tile">
-          <h3>Docker</h3>
-          <p>Container runtime and packaging layer for many lab services and experiments.</p>
+          <h3>Docker and Compose</h3>
+          <p>Packaging and local service orchestration for many experiments, support tools, and API services.</p>
           <div class="links"><a class="button-link" href="https://github.com/docker">GitHub org</a><a class="button-link" href="https://www.docker.com/">Homepage</a></div>
         </article>
         <article class="tile">
           <h3>Nginx Proxy Manager</h3>
-          <p>Friendly reverse-proxy management for routing, certificates, and service exposure.</p>
+          <p>Reverse-proxy management for routing, certificates, and controlled public service exposure.</p>
           <div class="links"><a class="button-link" href="https://github.com/NginxProxyManager/nginx-proxy-manager">GitHub</a><a class="button-link" href="https://nginxproxymanager.com/">Homepage</a></div>
         </article>
         <article class="tile">
@@ -315,16 +360,31 @@
           <div class="links"><a class="button-link" href="https://github.com/louislam/uptime-kuma">GitHub</a><a class="button-link" href="https://uptime.kuma.pet/">Homepage</a></div>
         </article>
         <article class="tile">
-          <h3>Ubuntu / Debian Linux</h3>
-          <p>The operating-system foundation under much of the lab: boring in the best possible way.</p>
-          <div class="links"><a class="button-link" href="https://github.com/debian">Debian GitHub</a><a class="button-link" href="https://ubuntu.com/">Ubuntu</a></div>
+          <h3>Grafana and Prometheus</h3>
+          <p>Observability, metrics, dashboards, and operational visibility for systems that need to be understood over time.</p>
+          <div class="links"><a class="button-link" href="https://grafana.com/">Grafana</a><a class="button-link" href="https://prometheus.io/">Prometheus</a></div>
+        </article>
+        <article class="tile">
+          <h3>Linux</h3>
+          <p>Ubuntu, Debian, and Linux tooling form the operating-system foundation under much of the lab.</p>
+          <div class="links"><a class="button-link" href="https://www.debian.org/">Debian</a><a class="button-link" href="https://ubuntu.com/">Ubuntu</a></div>
+        </article>
+        <article class="tile">
+          <h3>Cloudflare</h3>
+          <p>DNS, public routing, certificates, and internet-facing edge services where external reach needs a controlled boundary.</p>
+          <div class="links"><a class="button-link" href="https://www.cloudflare.com/">Homepage</a><a class="button-link" href="https://developers.cloudflare.com/">Docs</a></div>
+        </article>
+        <article class="tile">
+          <h3>OpenSSH</h3>
+          <p>Remote administration, service access, and operational glue for Linux and infrastructure workflows.</p>
+          <div class="links"><a class="button-link" href="https://www.openssh.com/">Homepage</a></div>
         </article>
       </div>
     </section>
 
     <section id="data">
       <h2>Data, search, and documents</h2>
-      <p class="lead">Structured data, document workflows, and retrieval systems matter because agents are only useful when their context is accurate and inspectable.</p>
+      <p class="lead">Structured data, object storage, documents, retrieval, and API-backed records matter because agents are only useful when their context is accurate and inspectable.</p>
       <div class="grid">
         <article class="tile">
           <h3>PostgreSQL</h3>
@@ -333,7 +393,7 @@
         </article>
         <article class="tile">
           <h3>pgvector</h3>
-          <p>Vector extension for PostgreSQL used for embeddings, semantic retrieval, and memory/search experiments.</p>
+          <p>Vector extension for PostgreSQL used for embeddings, semantic retrieval, memory, and search experiments.</p>
           <div class="links"><a class="button-link" href="https://github.com/pgvector/pgvector">GitHub</a></div>
         </article>
         <article class="tile">
@@ -357,9 +417,9 @@
           <div class="links"><a class="button-link" href="https://github.com/MariaDB/server">GitHub</a><a class="button-link" href="https://mariadb.org/">Homepage</a></div>
         </article>
         <article class="tile">
-          <h3>MinIO</h3>
-          <p>S3-compatible object storage for self-hosted storage patterns and service integration experiments.</p>
-          <div class="links"><a class="button-link" href="https://github.com/minio/minio">GitHub</a><a class="button-link" href="https://min.io/">Homepage</a></div>
+          <h3>MinIO and S3</h3>
+          <p>S3-compatible object storage patterns for artifacts, durable files, service integration, and lab storage workflows.</p>
+          <div class="links"><a class="button-link" href="https://github.com/minio/minio">MinIO</a><a class="button-link" href="https://aws.amazon.com/s3/">S3</a></div>
         </article>
         <article class="tile">
           <h3>Paperless-ngx</h3>
@@ -374,19 +434,61 @@
       </div>
     </section>
 
+    <section id="development">
+      <h2>Development, mobile, and project tooling</h2>
+      <p class="lead">A large part of the work is making ideas testable: staging repos, local builds, Android validation, API contracts, docs, and repeatable evidence.</p>
+      <div class="grid">
+        <article class="tile">
+          <h3>Git</h3>
+          <p>Version control for project history, staged changes, promotion trails, and recoverable development work.</p>
+          <div class="links"><a class="button-link" href="https://git-scm.com/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Python</h3>
+          <p>Automation, APIs, tests, data utilities, media tools, and service glue across the platform.</p>
+          <div class="links"><a class="button-link" href="https://www.python.org/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Node.js</h3>
+          <p>Web tools, service helpers, MCP servers, OpenClaw tooling, and frontend/backend experiments.</p>
+          <div class="links"><a class="button-link" href="https://nodejs.org/">Homepage</a></div>
+        </article>
+        <article class="tile">
+          <h3>Flutter and Dart</h3>
+          <p>Mobile app work, Omi integration validation, and cross-platform assistant interface experiments.</p>
+          <div class="links"><a class="button-link" href="https://flutter.dev/">Flutter</a><a class="button-link" href="https://dart.dev/">Dart</a></div>
+        </article>
+        <article class="tile">
+          <h3>Android SDK</h3>
+          <p>Android builds, emulator validation, wearable/mobile workflows, and integration testing.</p>
+          <div class="links"><a class="button-link" href="https://developer.android.com/tools">Developer tools</a></div>
+        </article>
+        <article class="tile">
+          <h3>Postman</h3>
+          <p>API exploration, request capture, and service-contract testing for integration work.</p>
+          <div class="links"><a class="button-link" href="https://www.postman.com/">Homepage</a></div>
+        </article>
+      </div>
+    </section>
+
     <section id="hardware">
       <h2>Hardware and embodied tools</h2>
       <p class="lead">The lab is not just servers. Wearables and purpose-built devices are part of the long-term assistant ecosystem: capture, context, voice, ambient memory, and human-centered interaction.</p>
       <div class="grid">
         <article class="tile">
           <h3>Omi</h3>
-          <p>Open-source AI wearable ecosystem used for exploring always-available memory, capture, and assistant workflows across device types.</p>
+          <p>Open-source AI wearable ecosystem used for always-available memory, capture, assistant workflows, and PatriciAI mobile integration work.</p>
           <div class="links"><a class="button-link" href="https://github.com/BasedHardware/omi">GitHub</a><a class="button-link" href="https://www.omi.me/">Homepage</a><a class="button-link" href="https://docs.omi.me/">Docs</a></div>
         </article>
         <article class="tile">
           <h3>rabbit r1</h3>
-          <p>Dedicated AI hardware in the exploration pile. The device is not treated here as fully open-source, but rabbit publishes open-source components and developer-facing material.</p>
+          <p>Dedicated AI hardware in the exploration stack, including launcher, OS, and developer-facing experiments.</p>
           <div class="links"><a class="button-link" href="https://www.rabbit.tech/r1">Homepage</a><a class="button-link" href="https://github.com/rabbit-hmi-oss">Open-source GitHub org</a></div>
+        </article>
+        <article class="tile">
+          <h3>Intel RealSense</h3>
+          <p>Depth sensing and camera tooling for spatial experiments, perception work, and embodied AI research paths.</p>
+          <div class="links"><a class="button-link" href="https://github.com/IntelRealSense/librealsense">GitHub</a></div>
         </article>
         <article class="tile">
           <h3>Raspberry Pi</h3>
