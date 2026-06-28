@@ -6,6 +6,12 @@ Live site:
 
 https://geekthegreybeard.github.io/
 
+Social channels:
+
+- YouTube: https://www.youtube.com/@GeekTheGreyBeard
+- Instagram: https://www.instagram.com/geekthegreybeard/
+- GitHub: https://github.com/GeekTheGreyBeard
+
 Pages:
 
 - Home: https://geekthegreybeard.github.io/
