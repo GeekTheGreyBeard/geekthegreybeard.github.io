@@ -27,3 +27,7 @@ Content posture:
 - Splat-I is the operating/orchestration layer for secure automation and governed intelligence.
 - PatriciAI is the human-facing intelligence presence and local-first agentic AI lab.
 - AdminX is the automation/workflow execution layer.
+
+## Internal Documentation
+
+Obsidian documentation: `OpenClaw/Projects/geekthegreybeard.github.io/`
